@@ -1,0 +1,19 @@
+def isCorrect(param, param1):
+    if len(param) != len(param1):
+        return False
+    hm={}
+    for char in param:
+        if char not in hm:
+            hm[char] = 1
+        else:
+            hm[char] += 1
+    for char in param1:
+        if char in hm:
+            hm[char] -= 1
+        else:
+            return False
+    for ch in hm:
+        if hm[ch] != 0:
+            return False
+    return True
+
