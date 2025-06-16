@@ -1,3 +1,4 @@
+#using single hashmap
 def isCorrect(param, param1):
     if len(param) != len(param1):
         return False
