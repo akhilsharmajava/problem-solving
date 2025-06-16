@@ -1,0 +1,25 @@
+def printNumber(ar1,ar2):
+    ar1.sort()
+    ar2.sort()
+    res=[]
+    i=j=0
+    while i<len(ar1) and j<len(ar2):
+        if ar1[i]<ar2[j]:
+            res.append(ar1[i])
+            i+=1
+        elif ar1[i]>ar2[j]:
+            res.append(ar2[j])
+            j+=1
+        else:
+            res.append(ar1[i])
+            i+=1
+            j+=1
+    if i==len(ar1) and j<len(ar2):
+        while j<len(ar2):
+            res.append(ar2[j])
+            j+=1
+    if j==len(ar2) and i<len(ar1):
+        while i<len(ar1):
+            res.append(ar1[i])
+            i+=1
+    return res[len(res)-2]
